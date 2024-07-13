@@ -1,13 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" >
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary"
+        data-bs-theme="dark"
+      >
         {/* data-bs-theme="dark" to make dark-theme in navbar */}
-        <div className="container-fluid" >
-          <h1 className="navbar-brand" href="/" >
+        <div className="container-fluid">
+          <h1 className="navbar-brand" href="/">
             {props.title}
           </h1>
           <button
@@ -24,14 +28,15 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/about">
+                  {/* This will help it not to reload */}
                   {props.aboutText}
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="d-flex" role="search">

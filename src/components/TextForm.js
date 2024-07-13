@@ -12,13 +12,11 @@ export default function TextForm(props) {
     setText(nameToUpper);
   };
   const handleCopyTextClick = () => {
-   navigator.clipboard.writeText(text)
-  
+    navigator.clipboard.writeText(text);
   };
   const handleRemoveSpaceClick = () => {
-    let newText = text.replace(/\s+/g,' ').trim();
-    setText(newText)
-  
+    let newText = text.replace(/\s+/g, ' ').trim();
+    setText(newText);
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
@@ -28,14 +26,13 @@ export default function TextForm(props) {
   };
 
   const [text, setText] = useState('');
-  const getTime = (text) =>{
-
-    return text.split(' ').length*0.008
-  }
+  const getTime = (text) => {
+    return text.split(' ').length * 0.008;
+  };
   return (
     <>
       <div className="mb-3 container">
-        <h1 className='mt-3'> {props.heading}</h1>
+        <h1 className="mt-3"> {props.heading}</h1>
         <textarea
           className="form-control mb-3"
           id="exampleFormControlTextarea1"
@@ -49,7 +46,10 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handleLowClick}>
           Convert to lowercase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleRemoveSpaceClick}>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={handleRemoveSpaceClick}
+        >
           Remove Extra Spaces
         </button>
 
@@ -63,7 +63,9 @@ export default function TextForm(props) {
       </div>
       <div className="container my-3">
         <h1>Your text summary</h1>
-        <p>{text.split(' ').length} words and {text.length} characters</p>
+        <p>
+          {text.split(' ').length} words and {text.length} characters
+        </p>
         <p> You need {getTime(text)} mins to read these words</p>
         <h3>Preview</h3>
         <p>{text}</p>
