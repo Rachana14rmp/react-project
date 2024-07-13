@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+### Props - is short form for properties
+Props are read only as per documentation
+
 In the project directory, you can run:
 
 ### `npm start`
